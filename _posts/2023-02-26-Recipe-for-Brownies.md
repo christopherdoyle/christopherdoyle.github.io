@@ -3,8 +3,6 @@ title: "Recipe for Brownies"
 date: 2023-02-26
 ---
 
-# Recipe for Brownies
-
 ## Ingredients
 
 * 100 g unsalted butter

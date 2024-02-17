@@ -1,5 +1,4 @@
 ---
-title: Welcome to my blog
+layout: articles
+title: 
 ---
-
-# Untitled
