@@ -27,6 +27,7 @@ INNER JOIN Users ON Posts.OwnerUserId = Users.Id
 | Kevin Dente  | NULL                                                                                  | 2008-07-31 22:17:57.883 |
 | Jeff Atwood  | "How do I calculate someone's age in C#?"                                             | 2008-07-31 23:40:59.743 |
 | Jeff Atwood  | Calculate relative time in C#                                                         | 2008-07-31 23:55:37.967 |
+{: .big-width }
 
 We can find the latest post for a user like this:
 
