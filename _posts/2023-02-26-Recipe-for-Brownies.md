@@ -22,7 +22,6 @@ date: 2023-02-26
 syrup in a double boiler.<span class="marginnote">Melting directly in a pan should work but this can split sometimes.</span>
 Once melted allow to cool to room temperature.
 Chop the remainder of the chocolate into small pieces.
-
 2. Grease a 20 cm (8 in) shallow square cake tin and line the base.
 Preheat an oven to 170 °C.
 3. Sift the flour, cocoa powder, and baking powder into a bowl with
