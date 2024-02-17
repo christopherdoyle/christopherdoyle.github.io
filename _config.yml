@@ -5,3 +5,7 @@ url: "https://christopherdoyle.github.io/"
 sass:
   sass_dir: _sass
   style: compressed
+
+markdown: kramdown
+highlighter: rouge
+input: GFM
