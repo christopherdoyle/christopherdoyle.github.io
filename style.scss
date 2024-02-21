@@ -131,6 +131,10 @@ pre {
     margin: 0;
     padding: 1rem;
     overflow-x: auto;
+    
+    pre {
+        font-size: 100%;
+    }
 }
 
 code {
@@ -160,6 +164,11 @@ table {
         &:not(:first-child) {
             text-align: right;
         }
+        
+        /* override for syntax highlighted tables */
+        &.code {
+            text-align: inherit;
+        }
     }
 
     thead th {
@@ -170,6 +179,25 @@ table {
 /**************************************
     $DEFAULT CLASSES
 /**************************************/
+    
+table.rouge-table {
+    /* code blocks with line numbers are pre inside table.
+    these should be allowed to be full width of the table.
+    putting tables inside pre is pretty stupid.
+    */
+    border-spacing: 0;
+    margin: 0;
+    
+    pre {
+        max-width: 100%;
+        padding: 0;
+        
+        &.lineno {
+            padding-right: 2rem;
+        }
+    }
+}
+
 /*p*/.subtitle {
     font-size: 1.8rem;
     font-style: italic;
@@ -398,5 +426,5 @@ nav {
 @media (prefers-color-scheme: dark) {
     body{background:#191919;filter:invert(1);}
     .highlight{border-color: grey !important;}
-    img,iframe,.highlight,a:hover,a:focus{filter:invert(1);}
+    img,iframe,a:hover,a:focus{filter:invert(1);}
 }

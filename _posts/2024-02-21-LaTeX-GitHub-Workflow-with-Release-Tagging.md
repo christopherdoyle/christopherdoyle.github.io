@@ -16,8 +16,8 @@ The end result is:
 
 Here is the YAML workflow:
 
+{% highlight yaml linenos %}
 {% raw %}
-```yaml
 name: Build LaTeX document
 
 on:
@@ -83,8 +83,8 @@ jobs:
           draft: false
           prerelease: false
           files: main.pdf
-```
 {% endraw %}
+{% endhighlight %}
 
 ## How it work
 
@@ -97,8 +97,8 @@ So when setting up the workflow, you need to push a tag first.
 
 `main.tex` looks like:
 
+{% highlight latex linenos %}
 {% raw %}
-```latex
 \newcommand{\Version}{}
 
 \makeatletter
@@ -114,8 +114,8 @@ So when setting up the workflow, you need to push a tag first.
 \begin{document}
 \maketitle
 \end{document}
-```
 {% endraw %}
+{% endhighlight %}
 
 and the contents of `version.tex` is like:
 
