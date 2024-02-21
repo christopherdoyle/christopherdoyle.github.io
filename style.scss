@@ -180,6 +180,10 @@ table {
     $DEFAULT CLASSES
 /**************************************/
     
+.highlight, .highlight pre {
+    max-width: 85%;
+}
+
 table.rouge-table {
     /* code blocks with line numbers are pre inside table.
     these should be allowed to be full width of the table.
