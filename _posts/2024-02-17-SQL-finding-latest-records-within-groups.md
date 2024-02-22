@@ -250,5 +250,3 @@ These things might not matter in a toy problem, but if this strategy is used ext
 It can also lead to errors: if `CreationDate` is changed from a `datetime` to a `date` (it is called a `Date`, but this *is* encoding a time; in other datasets, particularly older ones, it is not uncommon to see pure dates in a `datetime` column), and the temp table schema is not updated, then you are know adding a small cast to the insert, and another cast to the join in the select.
 Sometimes this penalty is imperceptible, but it could have a bigger impact then the savings of this solution.
 The best solution is not always the one that is quickest right now, and sometimes a slightly worse solution is better in the long run.
-
-

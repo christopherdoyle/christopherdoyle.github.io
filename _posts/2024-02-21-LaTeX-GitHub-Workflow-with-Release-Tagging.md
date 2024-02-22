@@ -28,12 +28,12 @@ on:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
-      
+
     permissions:
       contents: write
 
     steps:
-      
+
       - name: Set up Git repository
         uses: actions/checkout@v4
         with:
@@ -64,7 +64,7 @@ jobs:
           git add version.tex
           git commit -m "Bump version $old_version->${{ steps.get_next_version.outputs.version }}"
           git push
-                    
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@3.1.0
         if: steps.get_next_version.outputs.hasNextVersion == 'true'
@@ -149,4 +149,3 @@ If you want to give your supervisor the latest version without adding them to yo
 {% endraw %}
 
 This requires you to set the secrets in your repository's [secrets and variables](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) page.
-

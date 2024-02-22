@@ -48,3 +48,5 @@ _site
 # scratch
 code/
 
+# JS
+node_modules/
