@@ -248,9 +248,12 @@ table {
     $DEFAULT CLASSES
 /**************************************/
 
-.highlight,
-.highlight pre {
+.highlight {
   max-width: 85%;
+
+  & * {
+    max-width: 100%;
+  }
 }
 
 table.rouge-table {
