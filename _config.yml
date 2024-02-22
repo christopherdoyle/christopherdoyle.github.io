@@ -1,6 +1,8 @@
 title: Christopher Doyle
 description: 
 url: "https://christopherdoyle.github.io/"
+  
+exclude: [code]
 
 sass:
   sass_dir: _sass
