@@ -13,4 +13,4 @@ repos:
     hooks:
       - id: prettier
         types_or: [css, scss, javascript, xml, yaml]
-        exclude: "borland.css"
+        exclude: "^lib/"
