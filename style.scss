@@ -5,6 +5,23 @@
 @import url("borland.css");
 
 /**************************************
+    $ VARIABLE
+/**************************************/
+
+:root {
+    --background-color: white;
+    --on-background-color: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #191919;
+        --on-background-color: #f9f9f9;
+    }
+}
+
+
+/**************************************
     $ CUSTOM TYPEFACE
 /**************************************/
 /* ET Book Regular */
@@ -52,8 +69,8 @@ html {
 
 body {
     -webkit-font-smoothing: antialiased;
-    background: #fffff8;
-    color: #111;
+    background: var(--background-color);
+    color: var(--on-background-color);
     counter-reset: sidenote-counter;
     font: 1.4rem/2rem "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
     height: 100%;
@@ -91,7 +108,7 @@ p, li {
 }
 
 a,a:visited {
-    color: #111;
+    color: var(--on-background-color);
 
     &:hover {
         color: rgb(220, 40, 40);
@@ -119,7 +136,7 @@ figure {
 }
 
 hr {
-    background: #111;
+    background: var(--on-background-color);
     border: 0;
     height: 1px;
     margin: 4rem 0;
@@ -172,7 +189,7 @@ table {
     }
 
     thead th {
-        border-bottom: 1px solid #111;
+        border-bottom: 1px solid var(--on-background-color);
     }
 }
 
@@ -424,11 +441,4 @@ nav {
         width: 100%;
     }
 
-}
-
-/* Dark Mode */
-@media (prefers-color-scheme: dark) {
-    body{background:#191919;filter:invert(1);}
-    .highlight{border-color: grey !important;}
-    img,iframe,a:hover,a:focus{filter:invert(1);}
 }
