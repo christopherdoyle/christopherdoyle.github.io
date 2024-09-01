@@ -47,7 +47,7 @@ Fill in the B2 API ID and Key.
 The "key" field is your encryption password for the backups.
 This is the absolute minimum that you need to store from this configuration file in order to restore the backup.
 Store the key (or the entire config file) in a password manager, or write it down.
-You can also store the key in a separate file (and your password manager), which keeps the compose file secret-free, allowing you to store it in a public/private repo as a backup.
+You can also store the key in a separate file (and your password manager), and the B2 key in a `.env` file, which keeps the compose file secret-free, allowing you to store it in a public/private repo as a backup.
 
 At this point, autorestic should work.
 Run `autorestic check` to check the config.
@@ -154,7 +154,7 @@ Since we are running ntfy in docker, we will use docker exec to open a shell and
 You can also run `docker exec ntfy ntfy` to invoke `ntfy` directly.
 
 ```bash
-docker exec -it ntfy ntfy
+docker exec -it ntfy /bin/sh
 ntfy user add --role=user bob
 ntfy access bob autorestic read-only
 ntfy user add --role=user autorestic
