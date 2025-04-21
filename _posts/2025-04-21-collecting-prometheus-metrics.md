@@ -7,6 +7,7 @@ date: 2025-04-21
 
 In a Docker environment, we have multiple services running in separate networks.
 However, we want to collect metrics from these services using a single Prometheus container, without exposing services to each other.
+We can't / don't want to modify the services to expose their metrics to the Prometheus network (e.g. a push gateway, firewall rules, etc.).
 
 Suppose we have a docker compose:
 
