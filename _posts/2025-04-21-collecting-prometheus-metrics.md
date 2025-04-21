@@ -37,8 +37,9 @@ But this is not a good idea, as it would expose all the apps to each other.
 
 One solution to this problem is to add a reverse proxy configuration to each service, which exposes _just_ the metrics endpoint to the Prometheus network.
 
+### compose-prometheus.yml
+
 ```yaml
-# compose-prometheus.yml
 services:
   prom:
     image: prometheus
@@ -49,6 +50,8 @@ networks:
   prometheus:
     name: prometheus
 ```
+
+### compose-my_app.yml
 
 ```yaml
 # compose-my_app.yml
@@ -97,12 +100,16 @@ networks:
     external: true
 ```
 
-Here, we have a new service `prom_nginx` which is a reverse proxy for the metrics endpoint of `my_app`.
+Here, we introduce a new service, `prom_nginx`, which is a reverse proxy for the metrics endpoint of `my_app`.
 In this scenario, `my_app` exposes metrics on port 8081, and the main application on 8080.
-As such, the metrics are only exposed to the Prometheus network, and not the host machine.
-Moreover, Prometheus only has access to the metrics endpoint, and not the main application.
+As such, the metrics are only exposed to the Prometheus network and not to the end users of the app.
+Moreover, Prometheus has access only to the metrics endpoint, and not to the main application.
 Nginx is a bridge between the two networks, exposing just that metrics endpoint (and nothing else).
-This can easily scale to many applications, each with their own nginx bridge.
+This can easily scale to many applications, each with their own Nginx bridge.
+
+The Nginx container is configured using the `configs` directive, which avoids the need to create and mount an Nginx config file for each service's compose file - the nginx container and config block can be copy-pasted for each service, with minor edits.
+
+### prometheus.yml
 
 The prometheus config will look like:
 
