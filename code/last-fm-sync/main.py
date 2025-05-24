@@ -63,7 +63,7 @@ def update_config(track, artist, playcount):
 
 
 def main():
-    track, artist, playcount = get_top_track_this_month(config)
+    track, artist, playcount = get_top_track_this_month()
     update_config(track, artist, playcount)
 
 
