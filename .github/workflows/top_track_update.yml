@@ -31,6 +31,11 @@ jobs:
           LAST_FM_API_KEY: ${{ secrets.LAST_FM_API_KEY }}
           LAST_FM_USER: ${{ secrets.LAST_FM_USER }}
 
+      - name: Set branch name var
+        run: |
+          echo "DATE=$(date + '%Y%m%d')" >> $GITHUB_ENV
+          echo "BRANCH_NAME=update/last-fm-$(date +'%Y%m%d')" >> $GITHUB_ENV
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions"
@@ -38,8 +43,15 @@ jobs:
 
           git diff --quiet && echo "No changes" && exit 0
 
+          git checkout -b $BRANCH_NAME
           git add _config.yml
           git commit -m "Updated config with latest top track from last.fm"
-          git push
+          git push origin $BRANCH_NAME
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create PR
+        run: |
+          gh pr create --title "Last.FM update $DATE" --body "Automated" --base main --head $BRANCH_NAME
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
