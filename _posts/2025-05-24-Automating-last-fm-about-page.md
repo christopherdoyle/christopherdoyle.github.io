@@ -1,6 +1,6 @@
 ---
 title: "Automatically updating the 'about' page with my last.fm top listen"
-date: 2025-05-24
+date: 2025-05-23
 ---
 
 I "scrobble" all of my listens to [last.fm](https://www.last.fm/), which for some reason still exists.
