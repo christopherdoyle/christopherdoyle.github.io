@@ -15,7 +15,7 @@ You run it, it reads an API key and a username from the env, and it spits out th
 
 ## _config.yml
 
-Jekyll blog engine has a nice little yaml config file, and we can reference the variables within from any of the markdown pages.
+Jekyll blog engine has a nice little YAML config file, and we can reference the variables within from any of the markdown pages.
 In particular, the config can contain this:
 
 ```yaml
@@ -32,11 +32,11 @@ and the `about.md` can contain this:
 ```
 
 It wouldn't have been hard to `sed` the about page directly, but this is much cleaner.
-We can read the yaml file into a python object, udpate it, and write it back.
-I didn't bother making this stable, so it can create some unnecessary churn to the yaml file in the diff, but I don't really care.
+We can read the YAML file into a python object, update it, and write it back.
+I didn't bother making this stable, so it can create some unnecessary churn to the YAML file in the diff, but I don't really care.
 
 ## GH workflow
 
 The workflow is straightforward, it just checks out the code, installs the python deps, run the script, then gits the changes into a branch and opens a PR.
-I'd like to review the PR to start with and make sure it is sensible, and also nuke the PR when it has a truly embarassing track, but it should be possible to automatically merge this, or otherwise push directly to main.
-This only potential problem I see pushing to main is getting GH actions to be happy running the Jekyll build so that the site actually updates.
+I'd like to review the PR to start with and make sure it is sensible, and also nuke the PR when it has a truly embarrassing track, but it should be possible to automatically merge this, or otherwise push directly to main.
+The only potential problem I see pushing to main is getting GH actions to be happy running the Jekyll build so that the site actually updates.
