@@ -1,0 +1,45 @@
+name: Scheduled Python Script Execution
+
+on:
+  schedule:
+    - cron: "0 0 */7 * *" # every 7 days at midnight (UTC)
+
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.x"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r code/last-fm-sync/requirements.txt
+
+      - name: Run Python Script
+        run: |
+          cd code/last-fm-sync/
+          python main.py
+        env:
+          LAST_FM_API_KEY: ${{ secrets.LAST_FM_API_KEY }}
+          LAST_FM_USER: ${{ secrets.LAST_FM_USER }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git diff --quiet && echo "No changes" && exit 0
+
+          git add _config.yml
+          git commit -m "Updated config with latest top track from last.fm"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
