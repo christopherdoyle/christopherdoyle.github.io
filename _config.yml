@@ -1,13 +1,16 @@
-title: Christopher Doyle
-description:
-url: "https://christopherdoyle.github.io/"
-
-exclude: [code, node_modules]
-
+description: null
+exclude:
+- code
+- node_modules
+highlighter: rouge
+input: GFM
+markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
-
-markdown: kramdown
-highlighter: rouge
-input: GFM
+title: Christopher Doyle
+top_track:
+  artist: Dire Straits
+  name: On Every Street
+  playcount: 33
+url: https://christopherdoyle.github.io/
