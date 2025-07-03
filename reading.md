@@ -14,5 +14,5 @@ Updated when I feel like it.
 * 'Galápagos' by 'Kurt Vonnegut Jr.'
 * 'The Man in the High Castle' by 'Philip K. Dick'
 * 'The Great Gatsby' by 'F. Scott Fitzgerald'
-* 'Rahrenheit 451' by 'Ray Bradbury'
+* 'Fahrenheit 451' by 'Ray Bradbury'
 * 'Animal Farm' by 'George Orwell'
