@@ -39,7 +39,7 @@ jobs:
 
           git diff --quiet && echo "No changes" && exit 0
 
-          git checkout -b main
+          git checkout main
           git add _config.yml
           git commit -m "Updated config with latest top track from last.fm"
           git push origin main
