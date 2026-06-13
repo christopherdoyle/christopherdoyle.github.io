@@ -11,12 +11,16 @@
 
 :root {
   --background-color: white;
+  --surface-color: #dfe2f4;
+  --shadow-color: rgba(17, 17, 17, 0.5);
   --on-background-color: #111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #191919;
+    --surface-color: #393c38;
+    --shadow-color: rgba(249, 249, 249, 0.2);
     --on-background-color: #f9f9f9;
   }
 }
