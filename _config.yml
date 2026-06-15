@@ -1,7 +1,11 @@
+collections:
+  tools:
+    future: true
+    output: true
 description: null
 exclude:
-  - code
-  - node_modules
+- code
+- node_modules
 highlighter: rouge
 input: GFM
 markdown: kramdown
@@ -12,9 +16,5 @@ title: Christopher Doyle
 top_track:
   artist: Jane Wiedlin
   name: Rush Hour
-  playcount: 42
+  playcount: 43
 url: https://christopherdoyle.github.io/
-collections:
-  tools:
-    output: true
-    future: true
